@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8e2cb85aa93a12e8fb9c251654fffa8",
+    "content-hash": "0a537c404d9d1c84151b62640d414894",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -344,11 +344,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.32",
+            "version": "3.0.33",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/0bc53c9d10478acb32ba4d3af0c3d4e949dee920",
-                "reference": "0bc53c9d10478acb32ba4d3af0c3d4e949dee920",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/7d116eacee6c501395972ceef8a103825242cbf4",
+                "reference": "7d116eacee6c501395972ceef8a103825242cbf4",
                 "shasum": ""
             },
             "require": {
@@ -382,6 +382,9 @@
                 "yiisoft/yii2-queue": "2.1.0",
                 "yiisoft/yii2-swiftmailer": "^2.1.0",
                 "zendframework/zend-feed": "^2.8.0"
+            },
+            "conflict": {
+                "league/oauth2-client": "2.4.0"
             },
             "provide": {
                 "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
@@ -419,7 +422,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-11-20T18:44:56+00:00"
+            "time": "2018-11-27T19:30:29+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",

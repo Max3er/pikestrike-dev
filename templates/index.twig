@@ -2,4 +2,34 @@
 
 {% block main %}
 
+    {% for entry in craft.entries.section('startsida').limit(1).all() %}
+
+        <!-- Banner -->
+        <section id="banner" style="background-image: url('/assets/images/banner.jpg');">
+            <div class="inner">
+                <h1>{{ entry.rubrik }} <span>{{ entry.underrubrik }}</span></h1>
+                <ul class="actions">
+                    <li><a href="#" class="button alt">See our offers</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- End Banner -->
+
+        <!-- One -->
+        <section id="one">
+            <div class="inner fisherman-bg">
+                <header>
+                    <h2>{{ entry.rubrikAbout }}</h2>
+                </header>
+                {{ entry.beskrivningAbout }}
+                <hr>
+                <div class="social-media">
+                    <h3>Visit us on social medias</h3>
+                </div>
+            </div>
+        </section>
+        <!-- End One -->
+
+    {% endfor %}
+
 {% endblock %}

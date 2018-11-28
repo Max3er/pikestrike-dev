@@ -1,3 +1,88 @@
-{% block main %}
+<html>
+	<head>
+		<title>Pikestrike Sweden</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/ps-css.css" />
+	</head>
+	<body>
 
-{% endblock %}
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="logo">introspect</a>
+				<nav id="nav">
+					<a href="index.html">Home</a>
+					<a href="generic.html">Offers</a>
+					<a href="elements.html">Kayak fishing</a>
+					<a href="elements.html">Contact us</a>
+				</nav>
+			</div>
+		</header>
+		<!-- End Header -->
+
+		<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+        {% block main %}
+
+            <!-- Main content -->
+
+        {% endblock %}
+
+		<!-- Footer -->
+        <!-- Messages -->
+        <section id="footer">
+            <div class="inner">
+                <header>
+                    <h2>Get in Touch</h2>
+                </header>
+                <form method="post" action="#">
+                    <div class="field half first">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="field half">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="6"></textarea>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" class="alt" /></li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+        <!-- End Messages -->
+
+        <!-- Contact information -->
+        <section id="footer" style="background-color: #1c1c1c;">
+            <div class="inner">
+                <div class="footer-information">
+                    <h2>Contact us</h2>
+                    <p>Pikestrike Sweden<br>
+                    Färmanstorp S-37024<br>
+                    Nättraby<br>
+                    Phone: +46 705 920 868<br>
+                    Mail: pikestrike@hotmail.com
+                    </p>
+                </div>
+                <div class="copyright">
+                    &copy; Copyright Pikestrike Sweden 2018 - Created by <a href="https://templated.co/">Albatross Design</a>.
+                </div>
+            </div>
+        </section>
+        <!-- End Contact information -->
+        <!-- End Footer -->
+
+		<!-- Scripts -->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/skel.min.js"></script>
+        <script src="/assets/js/util.js"></script>
+        <script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
