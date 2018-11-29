@@ -15,7 +15,7 @@
         </section>
         <!-- End Banner -->
 
-        <!-- One -->
+        <!-- One: Welcome text -->
         <section id="one">
             <div class="inner fisherman-bg">
                 <header>
@@ -28,7 +28,33 @@
                 </div>
             </div>
         </section>
-        <!-- End One -->
+        <!-- End One: Welcome text -->
+
+        <!-- One: Image gallery -->
+        <section id="one" style="background-color: #f7f7f7; background-image: none;">
+            <div class="inner">
+                <h3>Fhising with Pikestrike</h3>
+                <div class="box alt">
+                    <div class="row 50% uniform">
+                        {% for asset in entry.bildgalleri %}
+                            <div class="4u"><span class="image fit"><img src="{{ asset.url }}" alt=""></span></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End One: Image gallery -->
+
+		<!-- Partners section -->
+		<section id="partners">
+			<div class="inner">
+				<header>
+					<h3>Our partners</h3>
+				</header>
+				<p>skriver</p>
+			</div>
+		</section>
+        <!-- End Partners section -->
 
     {% endfor %}
 
