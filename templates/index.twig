@@ -36,7 +36,7 @@
                 <h3>Fhising with Pikestrike</h3>
                 <div class="box alt">
                     <div class="row 50% uniform">
-                        {% for asset in entry.bildgalleri %}
+                        {% for asset in entry.bildgalleri.all() %}
                             <div class="4u"><span class="image fit"><img src="{{ asset.url }}" alt=""></span></div>
                         {% endfor %}
                     </div>

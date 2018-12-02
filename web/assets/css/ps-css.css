@@ -130,3 +130,8 @@ hr {
     .offer-wrapper > .card {
       width: 100% !important;
       margin-bottom: 5% !important; } }
+
+iframe {
+  width: 100% !important;
+  height: 550px !important;
+}
