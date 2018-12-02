@@ -1,0 +1,23 @@
+{% extends '_layout' %}
+
+{% block main %}
+    
+    {% for entry in craft.entries.section('erbjudanden').limit(1).all() %}
+
+        <!-- Section main -->
+        <section id="main" >
+            <div class="inner">
+
+                <header class="major special">
+                    <h1>{{ entry.title }}</h1>
+                    <p>{{ entry.ingress }}</p>
+                    <p><a href="#"><strong>&#8592; See more offers</strong></a></p>
+                </header>    
+
+            </div>
+        </section>
+        <!-- End Section main -->
+
+    {% endfor %}
+
+{% endblock %}

@@ -4,8 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a537c404d9d1c84151b62640d414894",
+    "content-hash": "6c41b18b5a2734af6d8f738c8cd9b023",
     "packages": [
+        {
+            "name": "benjamminf/craft-embedded-assets",
+            "version": "1.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/benjamminf/craft-embedded-assets/zipball/221b28f26b9a5afd4598acea9107dbfa1fdc5825",
+                "reference": "221b28f26b9a5afd4598acea9107dbfa1fdc5825",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "embed/embed": "^3.3"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "embeddedassets",
+                "name": "Embedded Assets",
+                "schemaVersion": "1.0.0",
+                "class": "benf\\embeddedassets\\Plugin",
+                "changelogUrl": "https://github.com/benjamminf/craft-embedded-assets/blob/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/benjamminf/craft-embedded-assets/archive/master.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "benf\\embeddedassets\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Fleming",
+                    "homepage": "https://github.com/benjamminf"
+                }
+            ],
+            "description": "Manage YouTube videos, Instagram photos, Twitter posts and more as first class assets",
+            "keywords": [
+                "assets",
+                "cms",
+                "craftcms",
+                "embed",
+                "instagram",
+                "plugin",
+                "twitter",
+                "vimeo",
+                "youtube"
+            ],
+            "support": {
+                "issues": "https://github.com/benjamminf/craft-embedded-assets/issues",
+                "source": "https://github.com/benjamminf/craft-embedded-assets",
+                "docs": "https://github.com/benjamminf/craft-embedded-assets/wiki",
+                "rss": "https://github.com/benjamminf/craft-embedded-assets/commits/master.atom"
+            },
+            "time": "2018-05-09T03:37:43+00:00"
+        },
         {
             "name": "cebe/markdown",
             "version": "1.1.2",
@@ -754,6 +810,49 @@
                 "php-emoji"
             ],
             "time": "2018-09-28T05:23:38+00:00"
+        },
+        {
+            "name": "embed/embed",
+            "version": "v3.3.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/9666691c78b25047bc6ee7e94823de3eaadce0c6",
+                "reference": "9666691c78b25047bc6ee7e94823de3eaadce0c6",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0",
+                "ext-curl": "*",
+                "ext-mbstring": "*",
+                "php": "^5.5|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Embed\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oscar Otero",
+                    "email": "oom@oscarotero.com",
+                    "homepage": "http://oscarotero.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP library to retrieve page info using oembed, opengraph, etc",
+            "homepage": "https://github.com/oscarotero/Embed",
+            "keywords": [
+                "embed",
+                "embedly",
+                "oembed",
+                "opengraph",
+                "twitter cards"
+            ],
+            "time": "2018-10-22T21:59:03+00:00"
         },
         {
             "name": "enshrined/svg-sanitize",
@@ -2586,6 +2685,6 @@
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.0"
+        "php": "7.2.1"
     }
 }
