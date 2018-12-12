@@ -25,7 +25,8 @@
                     <a href="#how-to-book" class="button bt-book">How to book</a>
                 </div>
                 <!-- Data table -->
-                {% if entry.priceInformation | length %}
+                <!-- If table row is empty -->
+                {% if entry.priceInformation|length and (entry.priceInformation[0].description) %}
                     <div class="description">
                         <div class="table-wrapper">
                             <table>
@@ -45,7 +46,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        {% if entry.visaPris | length %}
+                                        {% if entry.visaPris|length %}
                                             <td colspan="1">Price:</td>
                                             <td class="tdPrice"><strong>{{ entry.pris }}</strong></td>
                                         {% endif %}
@@ -60,17 +61,26 @@
             <!-- End Product info -->
 
             <!-- Image gallery -->
-            <div class="box alt">
-                <div class="row 50% uniform">
-                    {% for asset in entry.bilderErbjudande.all() %}
-                        <div class="4u"><span class="image fit"><img src="{{ asset.url }}" alt=""></span></div>
-                    {% endfor %}
+            {% if entry.bilderErbjudande|length %}
+                <div class="box alt">
+                    <div class="row 50% uniform">
+                        {% for asset in entry.bilderErbjudande.all() %}
+                            <div class="4u"><span class="image fit"><img src="{{ asset.url }}" alt=""></span></div>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
+            {% endif %}
             <!-- End Image gallery -->          
-
-            {{ entry.utokadInformation }}
-
+            
+            <!-- More info -->
+            {% set testntries = entry.utokadInformation %} <!-- Denna fungerar inte att filtera ut -->
+            {% if not entry.utokadInformation is same as (testntries) %}
+                {{ entry.utokadInformation }}
+                {% else %}
+                    
+            {% endif %}
+            <!-- End More info -->
+            
             <!-- Media -->
             {% set asset = entry.mediaYoutube.one() %}
             {% if asset|length %}
@@ -92,13 +102,15 @@
         <div class="inner">
             <h2 style="color: #7E846F;">More offers</h2>
             <div class="offer-wrapper">
-            {% for randomEntry in craft.entries.section('erbjudanden').orderBy('RAND()').limit(3) %}
+            {% for randomEntry in craft.entries.section('erbjudanden').orderBy('RAND()').limit(3).id('not ' ~ entry.id).all() %}
                 <div class="card">
-                    <span class="image fit"><img src="images/pic03.jpg" alt=""></span>
+                    {% for asset in randomEntry.bilderErbjudande.limit(1).all() %}
+                        <span class="image fit"><img src="{{ asset.url }}" alt=""></span>
+                    {% endfor %}
                     <h3>{{ randomEntry.title }}</h3>
                     <p>{{ randomEntry.teaser }}</p>
                     <ul class="actions">
-                        <li><a href="#" class="button alt">Learn More</a></li>
+                        <li><a href="{{ randomEntry.url }}" class="button alt">Learn More</a></li>
                     </ul>							
                 </div>
             {% endfor %}														
