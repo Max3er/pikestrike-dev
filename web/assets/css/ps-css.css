@@ -91,12 +91,19 @@ hr {
 
 #howto {
   background-color: #5d6151;
-  color: #f2a3a5;
+  color: #e1e2dc;
   padding: 4em 0 2em 0;
   background: #5d6151; }
 
 #howto h3 {
   color: #fff; }
+
+iframe {
+  width: 100% !important;
+  height: 640px !important; }
+
+.tdOption, .tdPrice {
+  text-align: right; }
 
 .product-info {
   display: -webkit-box;
@@ -130,8 +137,3 @@ hr {
     .offer-wrapper > .card {
       width: 100% !important;
       margin-bottom: 5% !important; } }
-
-iframe {
-  width: 100% !important;
-  height: 550px !important;
-}

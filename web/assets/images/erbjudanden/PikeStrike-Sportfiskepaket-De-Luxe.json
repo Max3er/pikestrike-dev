@@ -1,0 +1,86 @@
+{
+    "title": "PikeStrike Sportfiskepaket De Luxe!",
+    "description": "Starting April 2018, PikeStrike offers top-class sports packages consisting of accommodation for up to four people in a luxury cabin with the best location f...",
+    "url": "https://www.youtube.com/watch?v=YFSUz35yoio",
+    "type": "video",
+    "tags": [
+        "pike fishing Blekinge",
+        "pike fishing Ronneby",
+        "pike fishing archipelago",
+        "kayak fishing",
+        "boat rental",
+        "fishing packages",
+        "gäddfiske",
+        "top pike fishing",
+        "fishing lodge",
+        "pike fishing Sweden"
+    ],
+    "feeds": [],
+    "images": [
+        {
+            "url": "https://i.ytimg.com/vi/YFSUz35yoio/hqdefault.jpg",
+            "width": 480,
+            "height": 360,
+            "size": 172800,
+            "mime": "image/jpeg"
+        }
+    ],
+    "image": "https://i.ytimg.com/vi/YFSUz35yoio/hqdefault.jpg",
+    "imageWidth": 480,
+    "imageHeight": 360,
+    "code": "<iframe src=\"https://www.youtube.com/embed/YFSUz35yoio\" frameborder=\"0\" allowTransparency=\"true\" style=\"border:none;overflow:hidden;width:640;height:360;\"></iframe>",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 56.25,
+    "authorName": null,
+    "authorUrl": null,
+    "providerIcons": [
+        {
+            "url": "https://www.youtube.com/favicon.ico",
+            "width": 16,
+            "height": 16,
+            "size": 256,
+            "mime": "image/x-icon"
+        },
+        {
+            "url": "https://s.ytimg.com/yts/img/favicon-vfl8qSV2F.ico",
+            "width": 16,
+            "height": 16,
+            "size": 256,
+            "mime": "image/x-icon"
+        },
+        {
+            "url": "https://www.youtube.com/yts/img/favicon_32-vflOogEID.png",
+            "width": 32,
+            "height": 32,
+            "size": 1024,
+            "mime": "image/png"
+        },
+        {
+            "url": "https://www.youtube.com/yts/img/favicon_48-vflVjB_Qk.png",
+            "width": 48,
+            "height": 48,
+            "size": 2304,
+            "mime": "image/png"
+        },
+        {
+            "url": "https://www.youtube.com/yts/img/favicon_96-vflW9Ec0w.png",
+            "width": 96,
+            "height": 96,
+            "size": 9216,
+            "mime": "image/png"
+        },
+        {
+            "url": "https://www.youtube.com/yts/img/favicon_144-vfliLAfaB.png",
+            "width": 144,
+            "height": 144,
+            "size": 20736,
+            "mime": "image/png"
+        }
+    ],
+    "providerIcon": "https://www.youtube.com/yts/img/favicon_144-vfliLAfaB.png",
+    "providerName": "YouTube",
+    "providerUrl": "https://youtube.com",
+    "publishedTime": "2017-10-08",
+    "license": null
+}

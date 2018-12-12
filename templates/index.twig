@@ -30,6 +30,34 @@
         </section>
         <!-- End One: Welcome text -->
 
+        <!-- 2 Main offers -->
+        <section id="two">
+            <div class="inner">
+                {% set relatedEntries = entry.huvuderbjudanden.all() %}
+                {% if relatedEntries|length %}
+                    {% for rel in relatedEntries %}
+                        <article>
+                            <div class="content">
+                                <header>
+                                    <h3>{{ rel.title }}</h3>
+                                </header>
+                                <div class="image fit">
+                                    {% for asset in rel.teaserBild.all() %}
+                                        <img src="{{ asset.url }}" alt="" />
+                                    {% endfor %}
+                                </div>
+                                <p>{{ rel.teaser }}</p>
+                                <ul class="actions">
+                                    <li><a href="{{ rel.url }}" class="button alt">Learn More</a></li>
+                                </ul>
+                            </div>
+                        </article>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+        <!-- End 2 Main offers -->
+
         <!-- One: Image gallery -->
         <section id="one" style="background-color: #f7f7f7; background-image: none;">
             <div class="inner">

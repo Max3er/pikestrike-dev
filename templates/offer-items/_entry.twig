@@ -2,107 +2,120 @@
 
 {% block main %}
     
-    {% for entry in craft.entries.section('erbjudanden').limit(1).all() %}
+    <!-- Section main -->
+    <section id="main" >
+        <div class="inner">
 
-        <!-- Section main -->
-        <section id="main" >
-            <div class="inner">
+            <header class="major special">
+                <h1>{{ entry.title }}</h1>
+                <p>{{ entry.ingress }}</p>
+                <p><a href="#"><strong>&#8592; Go back to more offers</strong></a></p>
+            </header>
 
-                <header class="major special">
-                    <h1>{{ entry.title }}</h1>
-                    <p>{{ entry.ingress }}</p>
-                    <p><a href="#"><strong>&#8592; See more offers</strong></a></p>
-                </header>    
+            <!-- Main picture -->
+            {% for asset in entry.huvudbildErbjudanden.all() %}
+                <a href="#" class="image fit"><img src="{{ asset.url }}" alt="" /></a>
+            {% endfor %}
+            <!-- End Main picture -->
 
-                <!-- Main picture -->
-                {% for asset in entry.huvudbildErbjudanden.all() %}
-                    <a href="#" class="image fit"><img src="{{ asset.url }}" alt="" /></a>
-                {% endfor %}
-                <!-- End Main picture -->
-
-                <!-- Product info -->
-                <div class="product-info">
-                    <div class="text">
-                        {{ entry.beskrivningErbjudande }}
-                        <a href="#" class="button">How to book</a>
-                    </div>
-                    <!-- Data table -->
-                    {% if entry.priceInformation | length %}
-                        <div class="description">
-                            <div class="table-wrapper">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Description</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for row in entry.priceInformation %}
-                                        <tr>
-                                            <td>{{ row.description }}</td>
-                                            <td>{{ row.option }}</td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
+            <!-- Product info -->
+            <div class="product-info">
+                <div class="text">
+                    {{ entry.beskrivningErbjudande }}
+                    <a href="#how-to-book" class="button">How to book</a>
+                </div>
+                <!-- Data table -->
+                {% if entry.priceInformation | length %}
+                    <div class="description">
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for row in entry.priceInformation %}
+                                    <tr>
+                                        <td>{{ row.description }}</td>
+                                        <td class="tdOption">{{ row.option }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        {% if entry.visaPris | length %}
                                             <td colspan="1">Price:</td>
-                                            <td><strong>24 000 sek</strong></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
+                                            <td class="tdPrice"><strong>{{ entry.pris }}</strong></td>
+                                        {% endif %}
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
-                    {% endif %}
-                    <!-- End Data table -->
-                </div>
-                <!-- End Product info -->
-
-                <!-- Image gallery -->
-                <div class="box alt">
-                    <div class="row 50% uniform">
-                        {% for asset in entry.bilderErbjudande.all() %}
-                            <div class="4u"><span class="image fit"><img src="{{ asset.url }}" alt=""></span></div>
-                        {% endfor %}
                     </div>
+                {% endif %}
+                <!-- End Data table -->
+            </div>
+            <!-- End Product info -->
+
+            <!-- Image gallery -->
+            <div class="box alt">
+                <div class="row 50% uniform">
+                    {% for asset in entry.bilderErbjudande.all() %}
+                        <div class="4u"><span class="image fit"><img src="{{ asset.url }}" alt=""></span></div>
+                    {% endfor %}
                 </div>
-                <!-- End Image gallery -->          
+            </div>
+            <!-- End Image gallery -->          
 
-                {{ entry.utokadInformation }}
+            {{ entry.utokadInformation }}
 
-                <!-- Media -->
-                {% set asset = entry.mediaYoutube.one() %}
+            <!-- Media -->
+            {% set asset = entry.mediaYoutube.one() %}
+            {% if asset|length %}
                 {% set embed = craft.embeddedAssets.get(asset) %}
                 {% if embed %}
                     <h3>{{ embed.title }}</h3>
                     {{ embed.html }}
                 {% endif %}
-                <!-- End Media -->
+            {% endif %}
+            <!-- End Media -->
 
+        </div>
+        <!-- End Inner -->
+    </section>
+    <!-- End Section main -->
+
+    <!-- Section Other offers -->
+    <section id="one" style="background-color: #f7f7f7;">
+        <div class="inner">
+            <h2 style="color: #7E846F;">More offers</h2>
+            <div class="offer-wrapper">
+                <div class="card">
+                    <span class="image fit"><img src="images/pic03.jpg" alt=""></span>
+                    <h3>Sport fishing package</h3>
+                    <p>Skriver någon annan skittext</p>
+                    <ul class="actions">
+                        <li><a href="#" class="button alt">Learn More</a></li>
+                    </ul>							
+                </div>														
             </div>
-            <!-- End Inner -->
-        </section>
-        <!-- End Section main -->
+        </div>
+    </section>
+    <!-- End Section Other offers -->
 
-        <!-- Section Other offers -->
-        <section id="one" style="background-color: #f7f7f7;">
-            <div class="inner">
-                <h2 style="color: #7E846F;">See more offers</h2>
-                <div class="offer-wrapper">
-                    <div class="card">
-                        <span class="image fit"><img src="images/pic03.jpg" alt=""></span>
-                        <h3>Sport fishing package</h3>
-                        <p>Skriver någon annan skittext</p>
-                        <ul class="actions">
-                            <li><a href="#" class="button alt">Learn More</a></li>
-                        </ul>							
-                    </div>														
-                </div>
-            </div>
-        </section>
-        <!-- End Section Other offers -->
-
-    {% endfor %}
+    <!-- Section howto-->
+    <section id="howto">
+        <div class="inner">
+            <header>
+                <h2>How to book</h2>
+            </header>
+            {% for entry in craft.entries.section('howToBook').limit(1).all() %}
+                {{ entry.bokningsBeskrivning }}
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End Section howto -->
 
 {% endblock %}
