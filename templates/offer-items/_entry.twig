@@ -92,14 +92,16 @@
         <div class="inner">
             <h2 style="color: #7E846F;">More offers</h2>
             <div class="offer-wrapper">
+            {% for randomEntry in craft.entries.section('erbjudanden').orderBy('RAND()').limit(3) %}
                 <div class="card">
                     <span class="image fit"><img src="images/pic03.jpg" alt=""></span>
-                    <h3>Sport fishing package</h3>
-                    <p>Skriver någon annan skittext</p>
+                    <h3>{{ randomEntry.title }}</h3>
+                    <p>{{ randomEntry.teaser }}</p>
                     <ul class="actions">
                         <li><a href="#" class="button alt">Learn More</a></li>
                     </ul>							
-                </div>														
+                </div>
+            {% endfor %}														
             </div>
         </div>
     </section>
