@@ -2,7 +2,7 @@
 
 scrollButton();
 function scrollButton() {
-    $(".button").click(function () {
+    $(".bt-book").click(function () {
         $('html,body').animate({
             scrollTop: $("#howto").offset().top
         }, 'slow');

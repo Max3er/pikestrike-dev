@@ -1,0 +1,58 @@
+{% extends '_layout' %}
+
+{% block main %}
+
+    <!-- Section main -->
+    <section id="main" >
+        <div class="inner">
+
+            <!-- Header -->
+            <header class="major special">
+                <h1>{{ entry.ouroffersTitle }}</h1>
+                {{ entry.ouroffersDescription }}
+                <a href="#how-to-book" class="button bt-book">How to book</a>
+            </header>
+			<hr>
+            <!-- End Header -->
+
+            {% set entryIds = craft.entries.section('erbjudanden').ids() %}
+            {% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(1).find() %}
+            
+            <!-- Offer - A category and items -->
+            {% for category in categories %}
+                <h2>{{ category.title }}</h2>
+                <div class="offer-wrapper">
+                    {% for entry in craft.entries.relatedTo(category).all() %}
+                        <div class="card" style="border:1px solid #f3f3f3;">
+                            {% for asset in entry.teaserBild.all() %}
+                                    <span class="image fit"><img src="{{ asset.url }}" alt=""></span>
+                            {% endfor %}
+                            <h3>{{ entry.title }}</h3>
+                            <p>{{ entry.teaser }}</p>
+                            <ul class="actions">
+                                <li><a href="{{ entry.url }}" class="button alt">Learn More</a></li>
+                            </ul>							
+                        </div>
+                    {% endfor %}																							
+                </div>
+            {% endfor %}
+            <!-- End Offer - A category and items -->
+
+        </div>
+    </section>
+    <!-- End Section main -->
+
+    <!-- Section howto-->
+    <section id="howto">
+        <div class="inner">
+            <header>
+                <h2>How to book</h2>
+            </header>
+            {% for entry in craft.entries.section('howToBook').limit(1).all() %}
+                {{ entry.bokningsBeskrivning }}
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End Section howto -->
+
+{% endblock %}

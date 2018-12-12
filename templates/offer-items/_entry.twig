@@ -9,7 +9,7 @@
             <header class="major special">
                 <h1>{{ entry.title }}</h1>
                 <p>{{ entry.ingress }}</p>
-                <p><a href="#"><strong>&#8592; Go back to more offers</strong></a></p>
+                <p><a href="/offers"><strong>&#8592; Go back to more offers</strong></a></p>
             </header>
 
             <!-- Main picture -->
@@ -22,7 +22,7 @@
             <div class="product-info">
                 <div class="text">
                     {{ entry.beskrivningErbjudande }}
-                    <a href="#how-to-book" class="button">How to book</a>
+                    <a href="#how-to-book" class="button bt-book">How to book</a>
                 </div>
                 <!-- Data table -->
                 {% if entry.priceInformation | length %}
