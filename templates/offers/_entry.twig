@@ -16,14 +16,14 @@
             <!-- End Header -->
 
             {% set entryIds = craft.entries.section('erbjudanden').ids() %}
-            {% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(1).find() %}
+            {% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(1).all() %}
             
             <!-- Offer - A category and items -->
             {% for category in categories %}
                 <h2>{{ category.title }}</h2>
                 <div class="offer-wrapper">
                     {% for entry in craft.entries.relatedTo(category).all() %}
-                        <div class="card" style="border:1px solid #f3f3f3;">
+                        <div class="card">
                             {% for asset in entry.teaserBild.all() %}
                                     <span class="image fit"><img src="{{ asset.url }}" alt=""></span>
                             {% endfor %}

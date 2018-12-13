@@ -73,12 +73,7 @@
             <!-- End Image gallery -->          
             
             <!-- More info -->
-            {% set testntries = entry.utokadInformation %} <!-- Denna fungerar inte att filtera ut -->
-            {% if not entry.utokadInformation is same as (testntries) %}
-                {{ entry.utokadInformation }}
-                {% else %}
-                    
-            {% endif %}
+            {{ entry.utokadInformation }}
             <!-- End More info -->
             
             <!-- Media -->

@@ -26,6 +26,10 @@
                 <div class="social-media">
                     <h3>Visit us on social medias</h3>
                 </div>
+                <div class="social-icons">
+                    <i class="fab fa-facebook fa-4x"></i>
+                    <i class="fab fa-youtube fa-4x"></i>
+                </div>
             </div>
         </section>
         <!-- End One: Welcome text -->
@@ -57,6 +61,29 @@
             </div>
         </section>
         <!-- End 2 Main offers -->
+
+        <!-- 3 Offers -->     
+        <section id="three">
+            <div class="inner">
+                {% set relatedOffers = entry.enklaErbjudanden.all() %}
+                {% if relatedOffers|length %}
+                    {% for rel in relatedOffers %}
+                        <article>
+                            <div class="content">
+                                <header>
+                                    <h3>{{ rel.title }}</h3>
+                                </header>
+                                <p>{{ rel.teaser }}</p>
+                                <ul class="actions">
+                                    <li><a href="{{ rel.url }}" class="button alt">Learn More</a></li>
+                                </ul>
+                            </div>
+					    </article>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+        <!-- End 3 offers -->
 
         <!-- One: Image gallery -->
         <section id="one" style="background-color: #f7f7f7; background-image: none;">
