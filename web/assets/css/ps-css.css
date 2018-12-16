@@ -16,6 +16,12 @@
 hr {
   border-color: #f3f3f3; }
 
+.header-image {
+  height: 120px; }
+
+.header-link {
+  float: left !important; }
+
 .offer-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,12 +61,11 @@ hr {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  .social-icons a {
+    margin-right: 1% !important;
+    margin-left: 1% !important; }
   .social-icons i {
-    color: #5d6151;
-    padding-left: 1%;
-    padding-right: 1%; }
-    .social-icons i:hover {
-      text-decoration: underline; }
+    color: #5d6151; }
 
 /* #one {
     background-image: url(/images/fisherman.svg);
@@ -151,4 +156,9 @@ iframe {
     flex-direction: column; }
     .offer-wrapper > .card {
       width: 100% !important;
-      margin-bottom: 5% !important; } }
+      margin-bottom: 5% !important; }
+  .social-icons {
+    padding-bottom: 32px; }
+  .header-image {
+    padding-top: 10px;
+    height: 70px; } }

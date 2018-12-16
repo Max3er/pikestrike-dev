@@ -21,6 +21,14 @@ hr {
     border-color: #f3f3f3;
 }
 
+.header-image {
+    height: 120px;
+}
+
+.header-link {
+    float: left !important;
+}
+
 .offer-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -53,13 +61,12 @@ hr {
 .social-icons {
     display: flex;
     justify-content: center;
+    a {
+        margin-right: 1% !important;
+        margin-left: 1% !important;
+    }
     i {
         color: #5d6151;
-        padding-left: 1%;
-        padding-right: 1%;
-        &:hover {
-            text-decoration: underline;
-        }
     }
 }
 
@@ -165,4 +172,13 @@ iframe {
             margin-bottom: 5% !important;
         }
     }
+
+    .social-icons {
+        padding-bottom: 32px;
+    }
+
+    .header-image {
+        padding-top: 10px;
+        height: 70px;
+    }    
 }

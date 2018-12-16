@@ -1,0 +1,90 @@
+{% extends '_layout' %}
+
+{% block main %}
+    
+    <!-- Section main -->
+    <section id="main" >
+        <div class="inner">
+
+            <header class="major special">
+                <h1>{{ entry.titleKayaks }}</h1>
+                <p>{{ entry.ingressKayaks }}</p>
+                <!-- <p><a href="/offers"><strong>&#8592; Go back to more offers</strong></a></p> -->
+            </header>
+
+            <!-- Main picture -->
+            {% for asset in entry.huvudbildKayak.all() %}
+                <a href="#" class="image fit"><img src="{{ asset.url }}" alt="" /></a>
+            {% endfor %}
+            <!-- End Main picture -->
+
+            <!-- Product info -->
+            <div class="product-info">
+                <div class="text">
+                    {{ entry.brodtextSpalt1 }}
+                    <!--- <a href="#how-to-book" class="button bt-book">How to book</a> -->
+                </div>
+                <div class="description">
+                    {{ entry.brodtextSpalt2 }}
+                </div>
+            </div>
+            <!-- End Product info -->
+
+            <!-- Image gallery -->
+            {% if entry.bilderKayaks|length %}
+                <div class="box alt">
+                    <div class="row 50% uniform">
+                        {% for asset in entry.bilderKayaks.all() %}
+                            <div class="4u"><span class="image fit"><img src="{{ asset.url }}" alt=""></span></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            <!-- End Image gallery -->          
+            
+            <!-- More info -->
+            {{ entry.utokadInformationKayaks }}
+            <!-- End More info -->
+            
+            <!-- Media -->
+            {% set asset = entry.youtubeKayaks.one() %}
+            {% if asset|length %}
+                {% set embed = craft.embeddedAssets.get(asset) %}
+                {% if embed %}
+                    <h3>{{ embed.title }}</h3>
+                    {{ embed.html }}
+                {% endif %}
+            {% endif %}
+            <!-- End Media -->
+
+        </div>
+        <!-- End Inner -->
+    </section>
+    <!-- End Section main -->
+
+    <!-- Section Other offers -->
+    <section id="one" style="background-color: #f7f7f7;">
+        <div class="inner">
+            <h2 style="color: #7E846F;">Kayak offers</h2>
+            <div class="offer-wrapper">
+            {% set relatedEntries = entry.erbjudandenKayaks.all() %}
+                {% if relatedEntries|length %}
+                    {% for rel in relatedEntries %}
+                        <div class="card">
+                            {% for asset in rel.teaserBild.all() %}
+                                <span class="image fit"><img src="{{ asset.url }}" alt=""></span>
+                            {% endfor %}
+                            <h3>{{ rel.title }}</h3>
+                            <p>{{ rel.teaser }}</p>
+                            <ul class="actions">
+                                <li><a href="{{ rel.url }}" class="button alt">Learn More</a></li>
+                            </ul>							
+                        </div>
+                    {% endfor %}
+                {% endif %}														
+            </div>
+        </div>
+    </section>
+    <!-- End Section Other offers -->
+
+{% endblock %}

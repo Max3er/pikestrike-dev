@@ -5,11 +5,13 @@
     {% for entry in craft.entries.section('startsida').limit(1).all() %}
 
         <!-- Banner -->
-        <section id="banner" style="background-image: url('/assets/images/banner.jpg');">
+        {% for asset in entry.huvudbild.all() %}
+            <section id="banner" style="background-image: url('{{ asset.url }}');">
+        {% endfor %}
             <div class="inner">
                 <h1>{{ entry.rubrik }} <span>{{ entry.underrubrik }}</span></h1>
                 <ul class="actions">
-                    <li><a href="#" class="button alt">See our offers</a></li>
+                    <li><a href="#Offers" class="button alt scrollOffers">See our offers</a></li>
                 </ul>
             </div>
         </section>
@@ -27,8 +29,8 @@
                     <h3>Visit us on social medias</h3>
                 </div>
                 <div class="social-icons">
-                    <i class="fab fa-facebook fa-4x"></i>
-                    <i class="fab fa-youtube fa-4x"></i>
+                    <a href="https://www.facebook.com/PikeStrike-Sweden-pike-fishing-in-Blekinge-180406528642412/"><i class="fab fa-facebook fa-4x"></i></a>
+                    <a href="https://www.youtube.com/user/pikestrikesweden"><i class="fab fa-youtube fa-4x"></i></a>
                 </div>
             </div>
         </section>
@@ -36,7 +38,7 @@
 
         <!-- 2 Main offers -->
         <section id="two">
-            <div class="inner">
+            <div class="inner" id="scrollOffers">
                 {% set relatedEntries = entry.huvuderbjudanden.all() %}
                 {% if relatedEntries|length %}
                     {% for rel in relatedEntries %}
@@ -106,7 +108,7 @@
 				<header>
 					<h3>Our partners</h3>
 				</header>
-				<p>skriver</p>
+				<p>Här ska vi lägga partners. Vi får ta det en vända till vem, vilka som ska ligga här och på vilket sätt.</p>
 			</div>
 		</section>
         <!-- End Partners section -->
