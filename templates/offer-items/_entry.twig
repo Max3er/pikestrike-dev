@@ -9,12 +9,12 @@
             <header class="major special">
                 <h1>{{ entry.title }}</h1>
                 <p>{{ entry.ingress }}</p>
-                <p><a href="/offers"><strong>&#8592; Go back to more offers</strong></a></p>
+                <p><a href="/dev/offers"><strong>&#8592; Go back to more offers</strong></a></p>
             </header>
 
             <!-- Main picture -->
             {% for asset in entry.huvudbildErbjudanden.all() %}
-                <a href="#" class="image fit"><img src="{{ asset.url }}" alt="" /></a>
+                <a href="#" class="image fit"><img src="{{ siteUrl }}dev/{{ asset.url }}" alt="" /></a>
             {% endfor %}
             <!-- End Main picture -->
 
@@ -65,7 +65,7 @@
                 <div class="box alt">
                     <div class="row 50% uniform">
                         {% for asset in entry.bilderErbjudande.all() %}
-                            <div class="4u"><span class="image fit"><img src="{{ asset.url }}" alt=""></span></div>
+                            <div class="4u"><span class="image fit"><img src="{{ siteUrl }}dev/{{ asset.url }}" alt=""></span></div>
                         {% endfor %}
                     </div>
                 </div>
@@ -100,12 +100,12 @@
             {% for randomEntry in craft.entries.section('erbjudanden').orderBy('RAND()').limit(3).id('not ' ~ entry.id).all() %}
                 <div class="card">
                     {% for asset in randomEntry.bilderErbjudande.limit(1).all() %}
-                        <span class="image fit"><img src="{{ asset.url }}" alt=""></span>
+                        <span class="image fit"><img src="{{ siteUrl }}dev/{{ asset.url }}" alt=""></span>
                     {% endfor %}
                     <h3>{{ randomEntry.title }}</h3>
                     <p>{{ randomEntry.teaser }}</p>
                     <ul class="actions">
-                        <li><a href="{{ randomEntry.url }}" class="button alt">Learn More</a></li>
+                        <li><a href="{{ siteUrl }}dev/{{ randomEntry.uri }}" class="button alt">Learn More</a></li>
                     </ul>							
                 </div>
             {% endfor %}														

@@ -30,7 +30,7 @@ return [
     // Dev environment settings
     'dev' => [
         // Base site URL
-        'siteUrl' => 'http://pikestrike',
+        'siteUrl' => 'https://www.pikestrikesweden.com',
 
         // Dev Mode (see https://craftcms.com/support/dev-mode)
         'devMode' => true,
